@@ -4,14 +4,30 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float moveSpeed;
+    public float jumpPower;
+    public Rigidbody rig;
+
+    private bool isGrounded;
+
 
     // Update is called once per frame
     void Update()
+    {
+        float x = Input.GetAxisRaw("Horizontal") * moveSpeed;
+        float z = Input.GetAxisRaw("Vertical") * moveSpeed;
+        
+        rig.velocity = new Vector3(x, rig.velocity.y, z);
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            rig.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+        }
+
+
+    }
+
+    void OnCollisionEnter(Collision collision)
     {
         
     }

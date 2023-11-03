@@ -19,8 +19,9 @@ public class PlayerController : MonoBehaviour
         
         rig.velocity = new Vector3(x, rig.velocity.y, z);
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
+            isGrounded = false;
             rig.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
         }
 
@@ -29,6 +30,9 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        
+        if(collision.GetContact(0).normal == Vector3.up)
+        {
+            isGrounded = true;
+        }
     }
 }

@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf09d82b3b1782468fa9ef8d12c9de3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 4
   jumpPower: 5
   rig: {fileID: 6156103632769699422}
   score: 0

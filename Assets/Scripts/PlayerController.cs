@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded;
 
+    public int score;
 
     // Update is called once per frame
     void Update()
@@ -52,5 +53,11 @@ public class PlayerController : MonoBehaviour
     public void GameOver()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void AddScore(int amount)
+    {
+        score += amount;
+        //update score text ui
     }
 }

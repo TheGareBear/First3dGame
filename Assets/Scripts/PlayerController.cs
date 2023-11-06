@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     public int score;
+
+    public TextMeshProUGUI scoreText;
 
     // Update is called once per frame
     void Update()
@@ -58,6 +61,6 @@ public class PlayerController : MonoBehaviour
     public void AddScore(int amount)
     {
         score += amount;
-        //update score text ui
+        scoreText.text = score.ToString();
     }
 }
